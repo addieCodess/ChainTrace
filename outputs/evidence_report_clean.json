@@ -1,0 +1,51 @@
+{
+  "case": "clean_peel_chain",
+  "unknown_wallet": "0xUNKNOWN_0099",
+  "trail_break_detected": false,
+  "ranked_vasps": [
+    {
+      "vasp": "ExchangeA",
+      "confidence": 0.7838
+    }
+  ],
+  "node_level_detail": [
+    {
+      "node": "0xDEP_ExchangeA_9900",
+      "predicted_vasp": "ExchangeA",
+      "confidence": 0.7838,
+      "all_class_probs": {
+        "ExchangeA": 0.7838,
+        "ExchangeB_OTC": 0.017,
+        "ExchangeC": 0.1992
+      },
+      "top_features": [
+        {
+          "feature": "hop_distance_to_labeled",
+          "value": 1.0,
+          "weight": 0.0
+        },
+        {
+          "feature": "clustering_coeff",
+          "value": 0.0,
+          "weight": 0.0
+        },
+        {
+          "feature": "pagerank",
+          "value": 0.0486,
+          "weight": 0.0
+        }
+      ],
+      "heuristic": {
+        "heuristic_score": 0.667,
+        "looks_like_deposit_cluster": true,
+        "signals": {
+          "high_fan_in": true,
+          "regular_sweep_timing": false,
+          "near_known_vasp_cluster": true
+        }
+      }
+    }
+  ],
+  "ground_truth_vasp_for_grading": "ExchangeA",
+  "top_prediction_correct": true
+}

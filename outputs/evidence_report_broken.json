@@ -1,0 +1,200 @@
+{
+  "case": "broken_trail (mixer fan-out)",
+  "unknown_wallet": "0xUNKNOWN_0099",
+  "trail_break_detected": true,
+  "ranked_vasps": [
+    {
+      "vasp": "ExchangeB_OTC",
+      "confidence": 0.3252
+    }
+  ],
+  "node_level_detail": [
+    {
+      "node": "0xMIX_0990",
+      "predicted_vasp": "ExchangeB_OTC",
+      "confidence": 0.3252,
+      "all_class_probs": {
+        "ExchangeA": 0.015,
+        "ExchangeB_OTC": 0.8129,
+        "ExchangeC": 0.1721
+      },
+      "top_features": [
+        {
+          "feature": "pagerank",
+          "value": 0.0069,
+          "weight": 0.2893
+        },
+        {
+          "feature": "dormancy_s",
+          "value": 700.0,
+          "weight": 0.1086
+        },
+        {
+          "feature": "fan_in_ratio",
+          "value": 1.0,
+          "weight": 0.0941
+        }
+      ],
+      "heuristic": {
+        "heuristic_score": 0.333,
+        "looks_like_deposit_cluster": false,
+        "signals": {
+          "high_fan_in": false,
+          "regular_sweep_timing": false,
+          "near_known_vasp_cluster": true
+        }
+      },
+      "raw_confidence_before_discount": 0.8129
+    },
+    {
+      "node": "0xMIX_0991",
+      "predicted_vasp": "ExchangeB_OTC",
+      "confidence": 0.3252,
+      "all_class_probs": {
+        "ExchangeA": 0.015,
+        "ExchangeB_OTC": 0.8129,
+        "ExchangeC": 0.1721
+      },
+      "top_features": [
+        {
+          "feature": "pagerank",
+          "value": 0.0069,
+          "weight": 0.2893
+        },
+        {
+          "feature": "dormancy_s",
+          "value": 725.0,
+          "weight": 0.1197
+        },
+        {
+          "feature": "fan_in_ratio",
+          "value": 1.0,
+          "weight": 0.0941
+        }
+      ],
+      "heuristic": {
+        "heuristic_score": 0.333,
+        "looks_like_deposit_cluster": false,
+        "signals": {
+          "high_fan_in": false,
+          "regular_sweep_timing": false,
+          "near_known_vasp_cluster": true
+        }
+      },
+      "raw_confidence_before_discount": 0.8129
+    },
+    {
+      "node": "0xHOP_0991",
+      "predicted_vasp": "ExchangeB_OTC",
+      "confidence": 0.3127,
+      "all_class_probs": {
+        "ExchangeA": 0.0237,
+        "ExchangeB_OTC": 0.7817,
+        "ExchangeC": 0.1946
+      },
+      "top_features": [
+        {
+          "feature": "fan_in_ratio",
+          "value": 0.1667,
+          "weight": 0.3763
+        },
+        {
+          "feature": "pagerank",
+          "value": 0.0102,
+          "weight": 0.0956
+        },
+        {
+          "feature": "dormancy_s",
+          "value": 275.0,
+          "weight": 0.0793
+        }
+      ],
+      "heuristic": {
+        "heuristic_score": 0.333,
+        "looks_like_deposit_cluster": false,
+        "signals": {
+          "high_fan_in": false,
+          "regular_sweep_timing": true,
+          "near_known_vasp_cluster": false
+        }
+      },
+      "raw_confidence_before_discount": 0.7817
+    },
+    {
+      "node": "0xDEP_ExchangeA_9901",
+      "predicted_vasp": "ExchangeB_OTC",
+      "confidence": 0.3127,
+      "all_class_probs": {
+        "ExchangeA": 0.0237,
+        "ExchangeB_OTC": 0.7817,
+        "ExchangeC": 0.1946
+      },
+      "top_features": [
+        {
+          "feature": "pagerank",
+          "value": 0.0114,
+          "weight": 0.2415
+        },
+        {
+          "feature": "fan_in_ratio",
+          "value": 1.0,
+          "weight": 0.0941
+        },
+        {
+          "feature": "dormancy_s",
+          "value": 264.0,
+          "weight": 0.0842
+        }
+      ],
+      "heuristic": {
+        "heuristic_score": 0.333,
+        "looks_like_deposit_cluster": false,
+        "signals": {
+          "high_fan_in": false,
+          "regular_sweep_timing": false,
+          "near_known_vasp_cluster": true
+        }
+      },
+      "raw_confidence_before_discount": 0.7817
+    },
+    {
+      "node": "0xDEP_ExchangeA_9900",
+      "predicted_vasp": "ExchangeB_OTC",
+      "confidence": 0.3118,
+      "all_class_probs": {
+        "ExchangeA": 0.0194,
+        "ExchangeB_OTC": 0.7794,
+        "ExchangeC": 0.2012
+      },
+      "top_features": [
+        {
+          "feature": "pagerank",
+          "value": 0.0114,
+          "weight": 0.2415
+        },
+        {
+          "feature": "fan_in_ratio",
+          "value": 1.0,
+          "weight": 0.0941
+        },
+        {
+          "feature": "dormancy_s",
+          "value": 308.0,
+          "weight": 0.0647
+        }
+      ],
+      "heuristic": {
+        "heuristic_score": 0.333,
+        "looks_like_deposit_cluster": false,
+        "signals": {
+          "high_fan_in": false,
+          "regular_sweep_timing": false,
+          "near_known_vasp_cluster": true
+        }
+      },
+      "raw_confidence_before_discount": 0.7794
+    }
+  ],
+  "ground_truth_vasp_for_grading": "ExchangeA",
+  "top_prediction_correct": false
+}
