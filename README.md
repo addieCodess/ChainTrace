@@ -1,7 +1,6 @@
 # ChainTrace 
 
-A working, runnable slice of the ChainTrace VASP attribution engine
-described in the pitch deck: unknown wallet in, ranked+explainable VASP
+A working, runnable slice of the ChainTrace VASP attribution engine: unknown wallet in, ranked+explainable VASP
 attribution out. See `DECISIONS.md` for the full reasoning behind every
 design choice, what was simplified for this prototype, and the upgrade
 path for each simplification.
