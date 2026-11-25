@@ -1,4 +1,4 @@
-# ChainTrace prototype -- decision log
+# ChainTrace -- decision log
 
 This documents what was actually built for the working prototype, every
 deliberate simplification versus the pitch deck, why each one was made, and
