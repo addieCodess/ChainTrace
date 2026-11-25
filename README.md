@@ -1,4 +1,4 @@
-# ChainTrace prototype -- SIH26182
+# ChainTrace 
 
 A working, runnable slice of the ChainTrace VASP attribution engine
 described in the pitch deck: unknown wallet in, ranked+explainable VASP
