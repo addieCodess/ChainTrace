@@ -1,11 +1,5 @@
 # ChainTrace -- decision log
 
-This documents what was actually built for the working prototype, every
-deliberate simplification versus the pitch deck, why each one was made, and
-what the upgrade path looks like. Nothing here is hidden from a judge who
-asks a hard question -- if anything, this document IS the answer to most of
-the hard questions.
-
 ## What actually runs, end to end
 
 ```
@@ -48,7 +42,7 @@ Etherscan API.
    real failure risk for very little payoff -- the pipeline logic being
    demonstrated doesn't change based on where the edge list came from.
 
-**What we kept real:** `ingestion/etherscan_client.py` is a genuine,
+**What I kept real:** `ingestion/etherscan_client.py` is a genuine,
 runnable reference implementation (BFS k-hop pull, rate-limit sleep,
 degree-capped expansion for hub pruning) that a judge can read and verify
 matches the deck's stated approach. It's not a stub -- it's the real
@@ -60,7 +54,7 @@ client, just not wired into the live demo path.
 same `(from, to, value, timestamp)` edge schema, so nothing downstream
 changes.
 
-**What we'd do differently with more time:** Record and replay one *actual*
+**What I'd do differently with more time:** Record and replay one *actual*
 Etherscan response for a real, already-public incident (see "Further
 improvements" below) so the demo runs on real data without needing network
 access at all -- best of both worlds.
@@ -94,7 +88,7 @@ judge, which is much stronger than a self-graded synthetic case.
 
 ## Decision 3: NetworkX in-memory graph instead of Neo4j
 
-**What we did:** the entire prototype runs on a NetworkX `MultiDiGraph`,
+**What I did:** the entire prototype runs on a NetworkX `MultiDiGraph`,
 no Neo4j instance.
 
 **Why:** The deck's own feasibility slide argues this exact point: "a 2-3
@@ -115,7 +109,7 @@ shortcut we'd never revisit.
 
 ## Decision 4: Hand-engineered structural features instead of real node2vec
 
-**What we did:** `embeddings/structural_embedding.py` explicitly does *not*
+**What I did:** `embeddings/structural_embedding.py` explicitly does *not*
 run node2vec. Instead, PageRank, clustering coefficient, and hop-distance
 to a known cluster (computed in `features/extract_features.py`) serve as
 the "embedding" columns fed to the classifier.
@@ -145,7 +139,7 @@ only this one file.
 
 ## Decision 5: RandomForest instead of RandomForest + XGBoost
 
-**What we did:** only `RandomForestClassifier` (scikit-learn) is wired in,
+**What I did:** only `RandomForestClassifier` (scikit-learn) is wired in,
 despite the deck naming both RF and XGBoost.
 
 **Why:** scikit-learn is already a dependency with zero additional install
@@ -185,7 +179,7 @@ a contained, well-scoped follow-up, not a redesign.
 
 ## Decision 7: rule-based heuristic runs first and filters candidates, not just "ships first"
 
-**What we did:** originally, every structurally-reachable node within
+**What I did:** originally, every structurally-reachable node within
 range of the unknown wallet (hop wallets included) was handed straight to
 the ML classifier. **This produced a real bug during prototyping:** hop
 wallets with no deposit-cluster shape at all were being confidently (and
@@ -206,7 +200,7 @@ in the first place can't get that question wrong.
 
 ## Decision 8: hop-distance feature must exclude the query node itself
 
-**What we did:** `_hop_distance_to_labeled()` computes distance to the
+**What I did:** `_hop_distance_to_labeled()` computes distance to the
 nearest *other* known-anchor node, explicitly excluding the node being
 scored.
 
@@ -231,7 +225,7 @@ feature you add.
 
 ## Decision 9: trail-break detection is a blunt, explicit discount, not a learned one
 
-**What we did:** `_detect_trail_break()` in `run_demo.py` looks for a
+**What I did:** `_detect_trail_break()` in `run_demo.py` looks for a
 mixer-style fan-out (a node with several outgoing edges and little fan-in
 of its own) within 2 hops of the unknown wallet, and if found, multiplies
 every reported confidence by a fixed 0.4 discount -- rather than letting
